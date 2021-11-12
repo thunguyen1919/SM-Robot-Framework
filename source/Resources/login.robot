@@ -25,7 +25,5 @@ Click login button
     Click Button    id=LoginButton
 
 Output page should be visible
-    [Arguments]    ${username}   ${password}    ${output}
-    ${output}=  Run Keyword And Return Status    page should contain    SUPER MARKET
-    Run Keyword If    ${output}    element should contain    xpath=//div[@class='text-danger']  ${output}
-    Run Keyword If    ${output}    wait until page contains    ${output}
+    [Arguments]    ${output}    ${xpath}
+    wait until element contains    xpath=${xpath}   ${output}
